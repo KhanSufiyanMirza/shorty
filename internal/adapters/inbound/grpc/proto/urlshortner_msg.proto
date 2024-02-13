@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package pb;
+import "google/protobuf/duration.proto";
+
+
+option go_package = "./pb";
+
+message ShortnerRequest {
+  string url = 1;
+  string custom_short = 2;
+  google.protobuf.Duration expiry = 3;
+}
+
+message ShortnerResponse {
+  string url = 1;
+  string custom_short = 2;
+  google.protobuf.Duration expiry = 3;
+  int64 x_rate_remaining = 4;
+  google.protobuf.Duration x_rate_limit_reset = 5;
+}
+
+message UrlRequest {
+  string short_url = 1;
+}
+
+message UrlResponse {
+  string actual_url = 1;
+}

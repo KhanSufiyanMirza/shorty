@@ -1,0 +1,20 @@
+AppConfig:
+  AppName: hexa
+  AppPort: 9002
+  LogLevel: Info
+  JWTPrivKeyCert: "./certs/jwt-certs/app.rsa"
+  JWTPubKeyCert: "./certs/jwt-certs/app.rsa.pub"
+  SSLCert: "./certs/ssl-certs/sslcert.crt"
+  SSLPrivKey: "./certs/ssl-certs/sslcert.key"
+  APIQuota: 1
+  APIQuotaTTL: 9s
+  HttpRouter: fasthttp
+  DomainUrl: http://localhost:9002
+  RDBConfig:
+    Host: localhost:26257
+    DBName: defaultdb
+    User: root
+    Passwd:
+  KeyDBConfig:
+    Host: localhost:6379
+    Passwd: password

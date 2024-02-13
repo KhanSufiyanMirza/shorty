@@ -1,0 +1,39 @@
+version: '3'
+services:
+
+  # docker services
+  
+  hexa-crdb:
+    image: cockroachdb/cockroach:v22.2.2
+    ports:
+      - "26257:26257"
+      - "9080:8080"
+    restart: always
+    hostname: hexa-crdb
+    container_name: hexa-crdb
+    command: start-single-node --insecure
+    healthcheck:
+      test: [ "CMD", "cockroach", "sql", "--insecure" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hexa-network
+
+  hexa-keydb:
+    image: eqalpha/keydb
+    ports:
+      - "6379:6379"
+    restart: always
+    hostname: hexa-keydb
+    container_name: hexa-keydb
+    command: keydb-server /etc/keydb/keydb.conf --server-threads 4 --requirepass password
+    privileged: true
+    networks:
+      - hexa-network
+
+networks:
+  hexa-network:
+    external:
+      name: "hexa-network"
+  

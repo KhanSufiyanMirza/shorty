@@ -1,0 +1,40 @@
+// gin
+Requests      [total, rate, throughput]  24668308, 3426.15, 3426.14
+Duration      [total, attack, wait]      2h0m0.024651314s, 2h0m0.000227465s, 24.423849ms
+Latencies     [mean, 50, 95, 99, max]    29.175731ms, 5.475553ms, 131.705367ms, 221.5995ms, 906.572106ms
+Bytes In      [total, mean]              5427027760, 220.00
+Bytes Out     [total, mean]              63126200172, 2559.00
+Success       [ratio]                    100.00%
+Status Codes  [code:count]               200:24668308  
+Error Set:
+
+
+
+Requests      [total, rate, throughput]  24300447, 3375.06, 3375.05
+Duration      [total, attack, wait]      2h0m0.023656716s, 2h0m0.000186252s, 23.470464ms
+Latencies     [mean, 50, 95, 99, max]    29.617804ms, 5.507959ms, 130.805249ms, 216.905932ms, 980.579203ms
+Bytes In      [total, mean]              5346098340, 220.00
+Bytes Out     [total, mean]              62184843873, 2559.00
+Success       [ratio]                    100.00%
+Status Codes  [code:count]               200:24300447  
+
+// fasthttp
+Requests      [total, rate, throughput]  39308, 3930.62, 3923.48
+Duration      [total, attack, wait]      10.018650301s, 10.000458408s, 18.191893ms
+Latencies     [mean, 50, 95, 99, max]    25.438133ms, 5.128615ms, 121.229236ms, 201.703986ms, 634.137758ms
+Bytes In      [total, mean]              14308112, 364.00
+Bytes Out     [total, mean]              100589172, 2559.00
+Success       [ratio]                    100.00%
+Status Codes  [code:count]               200:39308  
+
+
+// grpc load testing
+ghz --insecure \
+    --call=grpc.health.v1.Health.Check \
+   --concurrency=100 \
+    --total=1000000 \
+    --duration=1m \
+    0.0.0.0:9000
+
+
+
