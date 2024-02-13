@@ -1,5 +1,0 @@
-<ns2:ReqHbt xmlns:ns2="http://npci.org/upi/schema/" xmlns:ns3="http://npci.org/cm/schema/">
-    <Head ver="2.0" ts="" orgId="" msgId="" prodType="IMPS"/>
-    <Txn id="" note="" refId="" refUrl="" ts="" type="Hbt" />
-    <HbtMsg type="EOD" value="DATE"/>
-</ns2:ReqHbt>

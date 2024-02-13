@@ -14,7 +14,7 @@ AppConfig:
     Host: localhost:26257
     DBName: defaultdb
     User: root
-    Passwd:
+    Passwd: # always use os.env to load secrets
   KeyDBConfig:
     Host: localhost:6379
-    Passwd: password
+    Passwd: password # always use os.env to load secrets

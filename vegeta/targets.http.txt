@@ -1,0 +1,2 @@
+POST http://localhost:9002/v1/shorty
+@./payload.json

@@ -16,7 +16,6 @@ func main() {
 	config := config.NewAppConfig()
 	config.Validate(false, true, false, false)
 	logger := logger.Init(ctx, logger.DebugLevel, config.AppName)
-
 	dbWrapper, err := gormdbwrapper.NewDBWrapper(logger, config.ProvideRDBConfig(), config.ProvideCacheConfig())
 	if err != nil {
 		logger.Fatal("Main", "error while Initializing DB %v", err)

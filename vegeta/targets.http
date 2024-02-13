@@ -1,2 +1,1 @@
-POST http://localhost:8080/v1/ReqHbt/urn
-@./payload.xml
+GET http://localhost:9002/v1/shorty/gogi
